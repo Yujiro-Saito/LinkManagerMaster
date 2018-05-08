@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <% @folder.links.each do |link| %>
+
+    <div class="col-sm-6">
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"><%= link.name %></h4>
+          <p class="card-text"><%= link.url %></p>
+          <%= link_to 'サイトをみる', link.url,  class: "btn btn-primary" %>
+          <%= link_to '編集', edit_link_path(link),  class: "btn btn-primary" %>
+          <%= link_to '削除', link_path(link), method: :delete, data: {confirm: "Are you sure?"},  class: "btn btn-primary" %>
+        </div>
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "リンクを追加", new_link_path(folder_id: @folder), class: "btn btn-primary", id: "addFolderButton" %>
+<%= link_to "戻る", folders_path, class: "btn btn-primary", id: "addFolderButton" %>
+
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<!-- Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Initialize Bootstrap functionality -->
+<script>
+// Initialize tooltip component
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// Initialize popover component
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
