@@ -1,45 +1,6 @@
 <%= form_for @link do |l| %>
 
   <p>
-    <%= l.label :url %>
-    <%= l.text_field :url %>
-  </p>
-
-  <p>
-    <%= link_to '確認', "#",  class: "btn btn-primary" %>
-  </p>
-
-
-
-
-  <% end %>
-
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-
-  <h3><%= @linkTitle %></h3>
-  <%= image_tag @linkImage, :width => '300', :height => '300' %>
-
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-<h3>Formal</h3>
-<%= form_for @link do |l| %>
-
-  <p>
     <%= l.label :name %>
     <%= l.text_field :name %>
   </p>
