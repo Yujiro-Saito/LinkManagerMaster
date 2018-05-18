@@ -11,13 +11,29 @@
 </head>
 <body>
 
-  <header>
-  	<ul class="navMenu">
-      <li><%= link_to "Linkeeper",folders_path  %></li>
-  	</ul>
-	</header>
+  <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "LinkStorage", folders_path, class: "navbar-brand" %>
+        </div>
+        <ul class="navbar-nav nav">
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>	
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+        <% if user_signed_in? %>
+          <p><%= link_to "New Folder", new_folder_path, class: "navbar-text navbar-link navbar-right" %></p>
+        <% end %>
+      </div>
+    </nav>
 
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
 
 </body>
 </html>
