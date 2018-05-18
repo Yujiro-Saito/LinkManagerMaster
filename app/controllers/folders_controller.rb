@@ -1,24 +1,32 @@
 class FoldersController < ApplicationController
 
-  before_action :set_folder, only: [:show, :edit, :update, :destroy]
+  before_action :set_folder, only: [:show, :edit, :update, :destroy, :authenticate_user!]
 
   def index
-    @folders = Folder.all.includes(:links)
+    #@folders = Folder.all.includes(:links)
+    if user_signed_in?
+      @folders = current_user.folders.includes(:links)
+    else
+
+    end
   end
 
   def show
   end
 
   def create
-    @folder = Folder.new(folder_params)
+    
+    @folder = current_user.folders.build(folder_params)
+    if @folder.save
+      redirect_to @folder
+    else
+      render 'new'
+    end
 
-    @folder.save
-
-    redirect_to @folder
   end
 
   def new
-    @folder = Folder.new
+    @folder = current_user.folders.build
   end
 
   def edit
