@@ -41,6 +41,39 @@
     text-decoration: none;
 }
 
+
+/* ----------------------------------------------- */
+/* Navbar */
+/* ----------------------------------------------- */
+
+.navbar {
+	font-family: 'Do Hyeon', sans-serif;
+	text-transform: uppercase;
+}
+.navbar-header a {
+  font-size: 240%;
+}
+
+.navbar-default {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #fff;
+}
+
+.navbar-nav > li > a {
+  color: #222;
+}
+
+.navbar-link {
+  color: #222;
+}
+
+.navbar-brand {
+  color: #222;
+  letter-spacing: 1.1px;
+}
+
+
 /* ----------------------------------------------- */
 /* General */
 /* ----------------------------------------------- */
