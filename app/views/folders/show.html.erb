@@ -9,7 +9,7 @@
         <div class="card-body">
           <h4 class="card-title"><%= link.name %></h4>
           <p class="card-text"><%= link.url %></p>
-          <%= link_to 'サイトをみる', link.url,  class: "btn btn-primary" %>
+          <%= link_to 'サイトをみる', link.url,  class: "btn btn-primary", :target=>["_blank"] %>
           <%= link_to '編集', edit_link_path(link),  class: "btn btn-primary" %>
           <%= link_to '削除', link_path(link), method: :delete, data: {confirm: "Are you sure?"},  class: "btn btn-primary" %>
         </div>
