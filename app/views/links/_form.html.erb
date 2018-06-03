@@ -1,13 +1,11 @@
-<%= form_for @link do |l| %>
+<%= form_for @link, html: {class: 'formGeneral'} do |l| %>
 
   <p>
-    <%= l.label :name %>
-    <%= l.text_field :name %>
+    <%= l.text_field :name, class: "formMini",:placeholder => "記事タイトル"%>
   </p>
 
   <p>
-    <%= l.label :url %>
-    <%= l.text_field :url %>
+    <%= l.text_field :url,class: "formMini", :placeholder => "URL" %>
   </p>
 
   <p>
@@ -15,7 +13,7 @@
   </p>
 
   <p>
-    <%= l.submit %>
+    <%= l.submit "保存" ,class: 'submitButton' %>
   </p>
 
 
