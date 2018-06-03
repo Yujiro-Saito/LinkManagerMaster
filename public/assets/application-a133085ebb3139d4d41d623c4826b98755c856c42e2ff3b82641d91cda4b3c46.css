@@ -28,7 +28,6 @@
     background-color: black;
     font-family: 'Do Hyeon', sans-serif;
     font-size: 40px;
-  
   }
   
   
@@ -61,30 +60,61 @@
   .navbar-default {
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #fff;
+  background-color: #22303d;
   }
   
   .navbar-nav > li > a {
-  color: #222;
+  color: white;
   }
   
   .navbar-link {
-  color: #222;
+  color: white;
   }
   
   .navbar-brand {
-  color: #222;
+  color: white;
   letter-spacing: 1.1px;
   }
-  
+
+
+  /* ----------------------------------------------- */
+  /* Form design */
+  /* ----------------------------------------------- */
+  .formGeneral {
+    margin-top: 100px;
+      text-align: center;
+      height: 300px;
+  }
+
+  .formMini {
+    width: 600px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .submitButton {
+    background-color: transparent;
+    width: 600px;
+    height: 50px;
+    color: #fff;
+    border: solid 1px white;
+    border-radius: 20px;
+  }
+  .submitButton:hover {
+    background-color: #283848;
+  }
+
   
   /* ----------------------------------------------- */
   /* General */
   /* ----------------------------------------------- */
   
   body {
-  /*background-color: #F0F0F0;*/
-  background-color: springgreen;
+  background-color: #22303d;
   }
   
   /* ----------------------------------------------- */
@@ -108,13 +138,40 @@
   }
   
   #addFolderButton {
-    background-color: #2980b9;
+    background-color: transparent;
     width: 320px;
     margin-left: 30px;
-  
+    border: solid 1px white;
   }
 
+  #addFolderButton:hover {
+    background-color: #283848;
+  }
+
+  .btn-primary{
+    background-color: #283848;
+    width: 120px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 25px;
+  } 
+
+  .folderLinkTitle {
+    color: black;
+  }
+  
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -164,30 +221,61 @@
   .navbar-default {
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #fff;
+  background-color:#22303d;
   }
   
   .navbar-nav > li > a {
-  color: #222;
+    color: #fff;
   }
   
   .navbar-link {
-  color: #222;
+    color: #fff;
   }
   
   .navbar-brand {
-  color: #222;
-  letter-spacing: 1.1px;
+    color:white;
+    letter-spacing: 1.1px;
   }
   
+
+  /* ----------------------------------------------- */
+  /* Form design */
+  /* ----------------------------------------------- */
+  .formGeneral {
+    margin-top: 100px;
+      text-align: center;
+      height: 300px;
+  }
+
+  .formMini {
+    width: 600px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .submitButton {
+    background-color: transparent;
+    width: 600px;
+    height: 50px;
+    color: #fff;
+    border: solid 1px white;
+    border-radius: 20px;
+  }
+  .submitButton:hover {
+    background-color: #283848;
+  }
+
   
   /* ----------------------------------------------- */
   /* General */
   /* ----------------------------------------------- */
   
   body {
-  /*background-color: #F0F0F0;*/
-  background-color: tomato;
+    background-color:#22303d;
   }
   
   /* ----------------------------------------------- */
@@ -211,12 +299,35 @@
   }
   
   #addFolderButton {
-    background-color: #2980b9;
+    background-color: transparent;
     width: 320px;
     margin-left: 30px;
-  
+    border: solid 1px white;
   }
 
+  #addFolderButton:hover {
+    background-color: #283848;
+  }
+  
+
+  .card-title {
+    text-align: center;
+  }
+  .btn-primary{
+    background-color: #283848;
+    width: 120px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+  }
+  
+  .folderLinkTitle {
+    color: black;
+  }
+
+  
 }
 
 
