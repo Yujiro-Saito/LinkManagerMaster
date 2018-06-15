@@ -1,9 +1,9 @@
 class FoldersController < ApplicationController
-
+  require 'nokogiri'
+  require 'open-uri'
   before_action :set_folder, only: [:show, :edit, :update, :destroy, :authenticate_user!]
 
   def index
-    #@folders = Folder.all.includes(:links)
     if user_signed_in?
       @folders = current_user.folders.includes(:links)
     else
@@ -12,6 +12,12 @@ class FoldersController < ApplicationController
   end
 
   def show
+    links = @folder.links
+    @box = []
+    for article in links do
+      @title = get_title(article.url)
+      @box.push(@title)
+    end
   end
 
   def create
@@ -47,6 +53,22 @@ class FoldersController < ApplicationController
 
 
   private
+
+  def get_title(url)
+    link = url
+    charset = nil
+
+    html = open(url) do |f|
+      charset = f.charset 
+      f.read
+    end
+
+    doc = Nokogiri::HTML.parse(html, nil, charset)
+
+    title = p doc.title
+
+    return title
+  end
 
   def folder_params
     params.require(:folder).permit(:title)
