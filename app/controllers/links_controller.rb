@@ -14,6 +14,10 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params, params[:folder_id])
+    @url = @link.url
+    @title = get_title(@url)
+    
+    @link.name = @title
     if @link.save
       redirect_to @link
     else
@@ -23,20 +27,7 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new(folder_id: params[:folder_id])
-
-    url = 'https://www.airbnb.jp/'
-
-    charset = nil
-    html = open(url) do |f|
-      charset = f.charset
-      f.read
-    end
-
-    doc = Nokogiri::HTML.parse(html, charset)
-
-    @linkTitle = p doc.title
-
-    @linkImage = p doc.css('//meta[property="og:image"]/@content').to_s
+    
 
 
   end
@@ -61,13 +52,28 @@ class LinksController < ApplicationController
   private
   
   def link_params
-    params.require(:link).permit(:name, :url,:folder_id)
+    params.require(:link).permit(:url,:folder_id)
   end
 
   def set_link
     @link = Link.find(params[:id])
   end
 
+
+  def get_title(url)
+    link = url
+    charset = nil
+    html = open(url) do |f|
+      charset = f.charset 
+      f.read
+    end
+
+    doc = Nokogiri::HTML.parse(html, nil, charset)
+
+    title = p doc.title
+
+    return title
+  end
 
 
 

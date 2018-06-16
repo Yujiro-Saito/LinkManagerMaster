@@ -1,11 +1,10 @@
-<%= form_for @folder do |f| %>
+<%= form_for @folder, html: {class: 'formGeneral'} do |f| %>
   <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title,class: "formMini", :placeholder => "フォルダ名" %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "保存",class: 'submitButton' %>
   </p>
 
   <% end %>

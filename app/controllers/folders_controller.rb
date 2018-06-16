@@ -13,11 +13,6 @@ class FoldersController < ApplicationController
 
   def show
     links = @folder.links
-    @box = []
-    for article in links do
-      @title = get_title(article.url)
-      @box.push(@title)
-    end
   end
 
   def create
@@ -54,22 +49,6 @@ class FoldersController < ApplicationController
 
   private
 
-  def get_title(url)
-    link = url
-    charset = nil
-
-    html = open(url) do |f|
-      charset = f.charset 
-      f.read
-    end
-
-    doc = Nokogiri::HTML.parse(html, nil, charset)
-
-    title = p doc.title
-
-    return title
-  end
-
   def folder_params
     params.require(:folder).permit(:title)
   end
@@ -77,10 +56,5 @@ class FoldersController < ApplicationController
   def set_folder
     @folder = Folder.find(params[:id])
   end
-
-
-
-
-
 
 end

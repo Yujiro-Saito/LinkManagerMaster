@@ -160,6 +160,10 @@
   .folderLinkTitle {
     color: black;
   }
+  .link-show {
+    padding-left: 50px;
+    color: aliceblue;
+  }
   
 
 }
@@ -324,6 +328,11 @@
   
   .folderLinkTitle {
     color: black;
+  }
+
+  .link-show {
+    color: aliceblue;
+    padding-left: 50px;
   }
 
   
